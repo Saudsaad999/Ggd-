@@ -1,0 +1,71 @@
+<!DO<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جمعية غدق</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="image .png" alt="شعار جمعية غدق" class="logo">
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">الرئيسية</a></li>
+                <li><a href="#" onclick="showSection('works')">أعمال الجمعية</a></li>
+                <li><a href="#" onclick="showSection('contact')">أرقام التواصل</a></li>
+
+            </ul>
+        </nav>
+
+        <section id="home">
+            <h1>مرحباً بكم في جمعية غدق</h1>
+            <p>جمعية غدق تهدف إلى تقديم الدعم والخدمات المجتمعية وسقيا الماء لمن يحتاجها.</p>
+        </section>
+
+        <section id="works" style="display:none;">
+            <h2>أعمال الجمعية</h2>
+            <ul>
+                <li>تقديم المساعدات في سقيا الماء .</li>
+                <li>توزيع الثلاجات.</li>
+                <li>دعم المحتاجين .</li>
+                <li>المشاركة في الحملات الخيرية.</li>
+            </ul>
+        </section>
+
+        <section id="contact" style="display:none;">
+            <h2>أرقام التواصل</h2>
+            <ul>
+                <li> رقم الهاتف : 0539677796  : </li>
+              <li>  :  . SA0480000498608010770773 الحساب المصرفي  : </li>
+                <li>العنوان: شارع الملك سعود ، الزلفي، المملكة العربية السعودية</li>
+            </ul>
+        </section>
+
+        
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+    // إخفاء جميع الأقسام
+    document.querySelectorAll('section').forEach(function(section) {
+        section.style.display = 'none';
+    });
+
+    // إزالة العلامة النشطة من جميع الروابط
+    document.querySelectorAll('nav ul li a').forEach(function(link) {
+        link.classList.remove('active');
+    });
+
+    // إظهار القسم المطلوب
+    document.getElementById(sectionId).style.display = 'block';
+
+    // إضافة العلامة النشطة للرابط الذي تم النقر عليه
+    document.querySelector(`nav ul li a[onclick="showSection('${sectionId}')"]`).classList.add('active');
+}
+    </script>
+</body>
+</html>
